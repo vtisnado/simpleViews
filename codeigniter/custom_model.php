@@ -42,8 +42,8 @@ class Custom_model extends CI_Model {
 
 
 	// Get column names from given table. Table columns can be passed as an array
-	private function get_table_columns($table_name, $choosen_fields = []) {
-	
+	function get_table_columns($table_name, $choosen_fields = [])
+	{
 		$fields = $this->db->list_fields($table_name);
 		$table_columns = array();
 		
