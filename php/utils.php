@@ -1,6 +1,6 @@
 <?php
 /**
- * Writen by: Victor Tisnado - @tisnadocom
+ * Writen by: Victor Tisnado - victortisnado.com
  * March 31, 2016
  */
 
