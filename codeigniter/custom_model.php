@@ -1,9 +1,11 @@
 <?php
+/**
+ * Writen by: Victor Tisnado - victortisnado.com
+ * March 31, 2016
+ */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Custom_model extends CI_Model {
-
-
 	// Get entries from given table. Table columns can be passed as an array
 	function get_table_entries($table_name, $choosen_fields = [], $filters = [])
 	{
