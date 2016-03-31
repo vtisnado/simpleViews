@@ -1,10 +1,43 @@
 <?php
-// Work in progress
+/**
+ * Writen by: Victor Tisnado - @tisnadocom
+ * March 31, 2016
+ */
 
 function get_table_entries($table_name, $choosen_fields = [], $filters = [])
 {
-// Working in this function. Come back later.
+	$j = 0;
+	$data = [];
+	$entry = [];
+	
+	// Select only given columns
+	if (!empty($choosen_fields)){
+		$fields = implode(",", $choosen_fields);
+	}else{
+		$fields = "*";
+	}
+	
+	// Add filters given as array
+	if (!empty($filters)){
+		$filter = implode(" AND ", $filters);
+	}else{
+		$filter = '1=1';
+	}
 
+	$sql = mysql_query("SELECT ". $fields ." FROM " . $table_name . " WHERE ". $filter);
+	$table_columns = get_table_columns($table_name, $choosen_fields);
+	while($row = mysql_fetch_array($sql, MYSQL_NUM))
+	{
+		$i = 0;
+		foreach ($table_columns as $table_column):
+			$entry[$table_column] = $row[$i];
+			$i++;
+		endforeach;
+		$data[$j] = $entry;
+		$j++;
+
+	}
+	return $data;
 }
 
 
