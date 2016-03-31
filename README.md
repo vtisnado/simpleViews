@@ -16,4 +16,4 @@ Optional you can pass an array of desired column names and/or an array of filter
 get_table_entries($table_name, $choosen_fields = [], $filters = [])
 ```
 
-You can choose between the traditional PHP (php/utils.php) or Codeigniter version (codeigniter/model.php).
+You can choose between the traditional PHP (php/utils.php) or Codeigniter version (codeigniter/custom_model.php).
